@@ -1,18 +1,32 @@
-# Salesforce DX Project: Next Steps
+=======
+# Salesforce-Lwc-Practice
+Salesforce LWC Practice Repository
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+This repository contains Lightning Web Components (LWC) developed while learning Salesforce Development and Salesforce DX. The components were created to gain hands-on experience with core LWC concepts, Salesforce platform features, and modern development practices.
 
-## How Do You Plan to Deploy Your Changes?
+Concepts Covered
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
+- Component Communication
+- Lifecycle Hooks
+- Lightning Data Service (LDS)git
+- Wire Service
+- Imperative Apex Calls
+- Lightning Message Service (LMS)
+- Navigation Service
+- Record Forms and Record Operations
+- Datatable Components
+- Reactive Properties and State Management
 
-## Configure Your Salesforce DX Project
+Technologies Used
 
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
+- Salesforce Lightning Web Components (LWC)
+- Apex
+- SOQL
+- Salesforce DX (SFDX)
+- Visual Studio Code
+- Git & GitHub
 
-## Read All About It
+Purpose
 
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+The purpose of this repository is to strengthen Salesforce development skills through practical implementation of Lightning Web Components and platform features. It serves as a collection of learning exercises, reusable examples, and hands-on experimentation with Salesforce development concepts.
+>>>>>>> b6b50f0b150fc19b9268a2fdab0d310709a90422
