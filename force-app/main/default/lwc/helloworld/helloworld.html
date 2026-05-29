@@ -1,0 +1,39 @@
+<template>
+    <lightning-layout>
+
+        <lightning-layout-item size="6">
+      
+    <lightning-card title="HI">
+        
+        <lightning-input type="text" label="Enter Your Name" name="name" onchange={UserInfo} ></lightning-input>
+        <lightning-input type="number" label="Enter your Age" name="age" onchange={UserInfo}></lightning-input>
+        <lightning-input type="radio" label= "Male" value="Male" name="gender" onchange={UserInfo} ></lightning-input>
+        <lightning-input type="password" label="Enter your Pass" name="Password" onchange={changeName}></lightning-input>
+        <lightning-input type="email" label="Enter your email" name="Email" onchange={changeName}></lightning-input>
+        <lightning-input type="checkbox" label="i Accept terms and Conditions"></lightning-input>
+          
+        <lightning-button variant="brand" label="Submit"   value = 'salesforce'  onclick={HandleClick}></lightning-button>
+    </lightning-card>
+
+        </lightning-layout-item>
+
+
+         <lightning-layout-item size="6">
+    
+    <lightning-card title="My info">        
+    <div>
+        <h1>Hello </h1> 
+    </div>
+    <div>
+        <p>my name is {name}</p>
+        <p>my age is {age}</p>
+        <p>gender is {gender}</p>
+        <p>my pass is {demo.Password}</p>
+        <p>my email is {demo.Email}</p>
+            </div>
+
+    </lightning-card>
+    </lightning-layout-item>
+
+    </lightning-layout>
+</template>

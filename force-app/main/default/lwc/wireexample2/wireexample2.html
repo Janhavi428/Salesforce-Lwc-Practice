@@ -1,0 +1,12 @@
+<template>
+
+    <lightning-card title="My Account Records">
+
+
+        <template lwc:if={account.data}>
+            <li>My name is :{name}</li>
+            <li>Indsurty is : {industry}</li>
+            <li>Balance is : {balance}</li>
+        </template>
+    </lightning-card>
+</template>

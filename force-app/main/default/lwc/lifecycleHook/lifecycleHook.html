@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="Account List" lwc:if={flag}>
+        <template if:true={accounts}>
+            <template for:each={accounts} for:item="acc">
+                <p key={acc.Id}>
+                    {acc.Name} - {acc.Industry}
+                </p>
+            </template>
+        </template>
+
+        <lightning-input type="text" label="Enter your name" onchange={handleChange}></lightning-input>
+        <p>my name is {name}</p>
+        <lightning-button
+            variant="success"
+            label="submit"
+            onclick={handleClick}
+        ></lightning-button>
+    </lightning-card>
+</template>

@@ -1,0 +1,178 @@
+## we can pass the data from parent to child in lwc using kabab case syntax
+Parent HTML :- <c-child-component Childvar = {myVar}></c-child-component>  // this is how we pass from parent to child
+Parent JS :- @track myVar = 'janhavi';
+
+Child JS :- @api childVar;
+Child HTML :- <p> my name is : {ChildVar}</p>
+
+## Child to parent :- we can pass the data from child to parent by creating custom event and dispatching that custom event from child component.
+
+ChildComp :- 
+<template>
+<lightning input type = 'text' label = 'Enter text' onchange = {handlechange}></lightning input>
+<lightning button label = "send data from child " onclicck = {handleclick}></lightning button>
+</template>
+
+Child js :- 
+@track inputVal ;
+handleChange(event){
+    this.inputVal = event.target.value;
+}
+handleClick(){
+    const event = new CustomEvent('myevent',
+    {
+        detail : this.inputVal;
+    });
+    this.dispatchEvent(event);
+}
+
+Parent HTML :- 
+<template>
+<c-child-component onmyevent = {handleEvent}></c-child-component>
+</template>
+
+Parent JS :- 
+@track myVar;
+
+handleEvent(event){
+    this.myVar = event.detail
+}
+
+
+
+=========================================================
+                    CUSTOM EVENT EXAMPLE
+    =========================================================
+    */
+
+    /*
+    // Method to fire custom event from child component
+    handleClick(){
+
+        // Create custom event named 'myrec'
+        const myrec = new CustomEvent('myrec', {
+
+            // Pass object data to parent component
+            detail: {
+                fname: this.firstName,
+                LName: this.lastName
+            }
+
+            // OR pass array data
+            // detail: ['sachin','deep','chaitali']
+        });
+
+        // Dispatch event to parent component
+        this.dispatchEvent(myrec);
+    }
+
+    ---------------------------------------------------------
+                    PARENT COMPONENT HTML
+    ---------------------------------------------------------
+
+    <c-parent onmyrec={handleEvent}></c-parent>
+
+    ---------------------------------------------------------
+                    PARENT COMPONENT JS
+    ---------------------------------------------------------
+
+    // Variables to store received data
+    firstname;
+    lastname;
+    listName;
+
+    // Method to handle custom event
+    handleEvent(event){
+
+        // Access object values from detail
+        this.firstname = event.detail.fname;
+        this.lastname = event.detail.LName;
+
+        // Access array values from detail
+        this.listName = [...event.detail];
+    }
+    */
+
+
+==================================================================
+CUSTOM EVENT EXAMPLE BY SACHIN NEW APPROACH 
+==================================================================
+
+ CHILD COMP - CUSTOM EVENT CREATED - JS
+======================================
+
+    
+    fullname = '';
+    dob = '';
+    email = '';
+    age = '';
+    
+
+    handleClick() {
+        const myinfo = new CustomEvent('myinfo', {
+            detail: {
+                fullname: this.fullname,
+                dob: this.dob,
+                email: this.email,
+                age: this.age,
+            }
+        });
+        this.dispatchEvent(myinfo);
+    }
+
+    handleAddressChange(event) {
+        const address = {
+            address: event.detail.Address,
+            street: event.detail.street,
+            city: event.detail.city,
+            state: event.detail.province,
+            postalCode: event.detail.postalCode,
+            country: event.detail.country
+        };
+
+        const myevent = new CustomEvent('addresschange', {
+            detail: address
+        });
+
+        this.dispatchEvent(myevent);
+    }
+
+==============================================================
+PARENT COMP JS
+=============================================================
+
+import { LightningElement } from 'lwc';
+
+export default class ParentComponent extends LightningElement {
+    
+    name = '';
+    age = '';
+    gender = '';
+    email = '';
+    dob = '';
+    street = '';
+    city = '';
+    state = '';
+    country = '';
+    pincode = '';
+    incident = '';
+
+
+
+    handleMyinfo(event) {
+
+        this.name = event.detail.fullname;
+        this.age = event.detail.age;
+        this.gender = event.detail.gender;
+        this.email = event.detail.email;
+        this.dob = event.detail.dob;
+        this.incident = event.detail.incident;
+    }
+    handleAddress(event) {
+        this.street = event.detail.street;
+        this.state = event.detail.state;
+        this.country = event.detail.country;
+        this.pincode = event.detail.postalCode;
+        this.city = event.detail.city;
+    }
+}

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+
+    <masterLabel>MessageChannelSample</masterLabel>   <!-- Name of the Message Channel -->
+
+    <isExposed>true</isExposed>    <!-- Makes this channel available for use -->
+
+    <description>This is a sample Lightning Message Channel.</description>
+
+    <lightningMessageFields>  <!-- First field that will store First Name -->
+        <fieldName>FirstName</fieldName>
+        <description>This is the FName </description>
+    </lightningMessageFields>
+
+    <lightningMessageFields>     <!-- Second field that will store Last Name -->
+        <fieldName>LastName</fieldName>
+        <description>This is the LName </description>
+    </lightningMessageFields>
+</LightningMessageChannel>
+
+<!-- 
+    Message Channel File
+    This file is used to create a Lightning Message Service (LMS) channel
+    so different LWC components can communicate with each other.
+-->

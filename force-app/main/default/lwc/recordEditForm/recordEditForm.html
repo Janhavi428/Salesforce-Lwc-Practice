@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="Record Edit Form">
+        <lightning-record-edit-form object-api-name={objectApiName} record-id={recordId}>
+
+            <lightning-messages></lightning-messages>  <!--Shows validation errors-->
+            <lightning-input-field field-name="AccountNumber"></lightning-input-field> <!--Salesforce field input-->
+            <lightning-input-field field-name="Name"></lightning-input-field>
+            <lightning-input-field field-name="Industry"></lightning-input-field>
+            <lightning-input-field field-name="Email_id__c"></lightning-input-field>
+
+            <lightning-button type="submit" label="Save"></lightning-button>
+
+        </lightning-record-edit-form>
+    </lightning-card>
+</template>
+
+<!-- USES : Creating records
+✅ Editing records
+✅ Auto validation
+✅ Auto save functionality -->

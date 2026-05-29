@@ -1,0 +1,43 @@
+<template>
+    <lightning-card title="AccountInfo" icon-name="standard:account">
+
+        <template for:each={account} for:item="acc">
+            
+            <p key={acc.id}> My ID is {acc.id}, My Name is {acc.name} </p>
+
+        </template> 
+        <!-- FOR EACH Use when : ✅ Simple looping needed
+                                 ✅ Just display records
+                                 ✅ No first/last checking needed -->
+
+
+
+        <!-- Iterator -->
+
+<template iterator:name={Names}>
+     <p key ={name.value}> My name is : {name.value}</p>
+</template>
+
+<template iterator:obj={object}>
+
+     <div key={obj.value.id}>
+     <template lwc:if ={obj.first}>
+          <h1>Student Names</h1>
+     </template>
+
+     <p> {obj.index} My name is : {obj.value.name}</p>
+     
+     <template lwc:if ={obj.last}>
+          <h1>Thankyou</h1>
+     </template>
+     </div>
+
+</template>
+
+    </lightning-card>   
+</template>
+<!-- ITERATOR Use when you need:
+✅ First item check
+✅ Last item check
+✅ Index value
+✅ Special formatting -->

@@ -1,0 +1,24 @@
+<template>
+    <lightning-card title ="Record View Form">
+      
+    </lightning-card>
+    <lightning-record-view-form
+      object-api-name={objectApiName}
+      record-id={recordId}
+    >
+    <div class="slds-grid slds-wrap">
+
+        <div class="slds-col slds-size_2-of-4">
+    <lightning-output-field field-name="Name"></lightning-output-field>  //Displays field values
+    </div>
+
+    <div class="slds-col slds-size_2-of-4">
+    <lightning-output-field field-name="Industry"></lightning-output-field>
+    </div>
+
+    </div>
+</lightning-record-view-form>
+    
+</template>
+
+<!-- Record View Form used to display record data (only view)-->

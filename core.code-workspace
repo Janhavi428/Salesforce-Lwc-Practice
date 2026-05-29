@@ -1,0 +1,19 @@
+{
+  "folders": [
+    {
+      "path": "c:/Users/Hp/OneDrive/Desktop/PracticeLWCProject"
+    }
+  ],
+  "settings": {
+    "eslint.workingDirectories": [
+      "c:/Users/Hp/OneDrive/Desktop/PracticeLWCProject"
+    ],
+    "eslint.validate": [
+      "javascript",
+      "typescript"
+    ],
+    "eslint.options": {
+      "overrideConfigFile": "c:\\Users\\Hp\\OneDrive\\Desktop\\PracticeLWCProject\\.eslintrc.json"
+    }
+  }
+}

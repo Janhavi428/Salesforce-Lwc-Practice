@@ -1,0 +1,24 @@
+<template>
+    <lightning-layout horizontal-align="center" class="slds-box">
+        <lightning-layout-item size="4" class="slds-box">
+            
+             <!-- Search input field -->
+            <!-- onchange calls inputChange method whenever user types -->
+            <lightning-input type="search" placeholder="Search here" onchange={inputChange}></lightning-input>
+        </lightning-layout-item>
+    </lightning-layout>
+
+    <lightning-layout horizontal-align="center" class="slds-box">
+        <lightning-layout-item size="6" class="slds-box">
+
+             <!-- Check if data is available from wire service -->
+            <template lwc:if={account.data}>
+                <template for:each={account.data} for:item="acc">
+
+                     <!-- Display account details -->
+                    <li key={acc.id}> My name is : {acc.Name}, Industry is : {acc.Industry}</li>
+                </template>
+            </template>
+        </lightning-layout-item>
+    </lightning-layout>
+</template>

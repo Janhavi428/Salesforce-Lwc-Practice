@@ -1,0 +1,51 @@
+<template>
+    <lightning-layout>
+
+        <lightning-layout-item size="12" lwc:if={display}>
+            <lightning-card title="MY INFORATION">
+
+                <template lwc:if={display}>
+                    <div><h1>Please Enter Your Information</h1></div>
+
+                    <lightning-input type="text" label="Please Enter your name" name="name" onchange={info}></lightning-input>
+
+                    <lightning-input type="number" label="Please Enter your age" name="age" onchange={info}></lightning-input>
+
+                    <label><b>Select Your Gender</b></label><br>
+
+                    <lightning-input type="radio" label="Male" name="gen" value="male" onchange={info}></lightning-input>
+
+                    <lightning-input type="radio" label="Female" name="gen" value="female" onchange={info}></lightning-input>
+
+                    <lightning-input type="radio" label="Others" name="gen" value="others" onchange={info}></lightning-input>
+
+                    <lightning-input type="email" label="Please Enter your email" name="email" onchange={info}></lightning-input>
+
+                    <lightning-input type="password" label="Please Enter your password" name="pass" onchange={info}></lightning-input>
+
+                    <lightning-button variant="brand" label="Submit" onclick={handleClick}></lightning-button>
+                </template>
+            </lightning-card>
+        </lightning-layout-item>
+
+        <lightning-layout-item size="12" lwc:if={flag}>
+            <lightning-card title="YOUR INFORMATION">
+                <template lwc:if={flag}>
+
+                <div>
+                    <p>
+                        My Name is : {name} <br>
+                        My Age is : {age} <br>
+                        My Gender is : {gen} <br>
+                        My Email : {email} <br>
+                        My Password is : {pass}
+                    </p>
+
+                    <lightning-button label="Confirm" onclick={handleClick02}></lightning-button>
+                </div>
+               </template>
+            </lightning-card>
+        </lightning-layout-item>
+
+    </lightning-layout>
+</template>

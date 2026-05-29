@@ -1,0 +1,53 @@
+<template>
+
+    <!-- Account List -->
+    <h2 class="slds-text-heading_medium slds-m-bottom_medium">
+        Accounts
+    </h2>
+
+    <template if:true={accounts.data}>
+        <template for:each={accounts.data} for:item="acc">
+
+            <div key={acc.Id}
+                 class="slds-grid slds-grid_align-spread slds-grid_vertical-align-center slds-p-around_x-small slds-m-bottom_small slds-box">
+
+                <!-- Account Name -->
+                <div>
+                    {acc.Name}
+                </div>
+
+                <!-- Button -->
+                <div>
+                    <lightning-button
+                        variant="brand"
+                        data-id={acc.Id}
+                        label="Click me"
+                        onclick={handleAccountClick}>
+                    </lightning-button>
+                </div>
+
+            </div>
+
+        </template>
+    </template>
+
+
+    <!-- Contact List -->
+    <h2 class="slds-text-heading_medium slds-m-top_large slds-m-bottom_medium">
+        Contacts
+    </h2>
+
+    <template if:true={contacts}>
+        <template for:each={contacts} for:item="con">
+
+            <div key={con.Id}
+                 class="slds-p-around_x-small slds-m-bottom_small slds-box">
+
+                {con.Name} - {con.Email}
+
+            </div>
+
+        </template>
+    </template>
+
+</template>

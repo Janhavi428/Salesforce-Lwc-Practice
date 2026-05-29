@@ -1,0 +1,9 @@
+<template>
+    <lightning-card icon-name="standard:account" variant="base" title="My Info">
+    <lightning-input type="text" label="Enter Name" name="Name" onchange={myEvent}></lightning-input> 
+    <lightning-button variant="brand" label="Click me" onclick={myfunc}></lightning-button>
+    <p>wellcome</p>
+
+    <div>Welcome {user.Name}, {user.age}, {user.city}</div>
+    </lightning-card>  
+</template>
